@@ -30,22 +30,25 @@ export default {
   methods: {
     initMap () {
       this.map = new Map({
+
+        target: "map1",
+
         layers: [
           new Tile({
             source: new OSM()
           })
         ],
+
         view: new View({
           projection: "EPSG:4326",
           center: [113.100774,29.386975],
           zoom: 10
         })
       })
-      this.map.setTarget('map1')
     },
     changeMap () {
       let target = this.map.getTarget() === 'map1' ? 'map2' : 'map1'
-      this.map.setTarget(target)
+      this.map.setTarget(target)    //使用地图容器.setTarget()可以设置地图的target属性
     }
   },
   mounted () {
