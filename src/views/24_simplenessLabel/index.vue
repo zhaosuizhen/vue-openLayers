@@ -4,6 +4,7 @@
     <div ref="popup" class="popup" v-show="shopPopup"></div>
     <div id="map" class="map-x"></div>
     <div class="explain">
+      <p>可与上面"标记"的demo做对比,效果一样,代码实现不同</p>
       <p>可以用Overlay实现，像弹窗那个demo里那样。</p>
       <p>但当图标比较多的情况下，就需要加入非常多的HTML元素，从而造成效率降低。</p>
       <hr>
