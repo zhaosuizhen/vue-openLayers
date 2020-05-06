@@ -1,14 +1,21 @@
 <template>
   <div class="vm">
     <h2 class="h-title">弹窗 popup</h2>
+
+    <!-- 地图容器 -->
     <div id="map" class="map-x"></div>
 
+    <!-- 弹窗容器 -->
     <div
       class="popup"
       ref="popup"
       v-show="currentCoordinate"
     >
+
+    <!-- 关闭按钮 -->
       <span class="icon-close" @click="closePopup">✖</span>
+
+    <!-- 显示内容 -->
       <div class="content">{{currentCoordinate}}</div>
     </div>
     <div class="explain">
@@ -36,17 +43,17 @@ export default {
   data () {
     return {
       map: null,
-      currentCoordinate: null,
+      currentCoordinate: null,  //控制弹窗是否显示\弹框中显示的内容
       overlay: null
     }
   },
   methods: {
     initMap () {
-      // 弹窗
+      // 弹窗配置
       this.overlay = new Overlay({
         element: this.$refs.popup, // 弹窗标签，在html里
-        autoPan: true, // 如果弹窗在底图边缘时，底图会移动
-        autoPanAnimation: { // 底图移动动画
+        autoPan: true, // 如果弹窗在底图边缘时，底图会自动移动至显示全部弹窗
+        autoPanAnimation: { // 底图移动动画,单位(毫秒)
           duration: 250
         }
       })
@@ -54,12 +61,15 @@ export default {
       // 实例化地图
       this.map = new Map({
         target: 'map',
+
         layers: [
           new Tile({
             source: new OSM()
           })
         ],
+
         overlays: [this.overlay], // 把弹窗加入地图
+
         view: new View({
           center: [-27118403.38733027, 4852488.79124965], // 北京坐标
           zoom: 12 // 地图缩放级别（打开页面时默认级别）
@@ -69,10 +79,11 @@ export default {
     },
     mapClick () {
       this.map.on('singleclick', evt => {
-        const coordinate = evt.coordinate
-        const hdms = toStringHDMS(toLonLat(coordinate))
-        
-        this.currentCoordinate = hdms // 保存坐标点
+        const coordinate = evt.coordinate               //这个获取到的是像'center'中心点一样的坐标点
+        // console.log(coordinate)                      //[-27123159.680715512, 4851265.798797086]
+        const hdms = toStringHDMS(toLonLat(coordinate)) //这个获取到的是经纬度
+        // console.log(hdms)                            //39° 53′ 57″ N 116° 20′ 55″ E
+        this.currentCoordinate = hdms // 保存坐标点详情
 
         setTimeout(() => {
           // 设置弹窗位置

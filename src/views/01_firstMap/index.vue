@@ -2,7 +2,7 @@
   <div class="vm">
     <h2 class="h-title">第一个地图</h2>
 
-<!-- 地图容器 -->
+    <!-- 地图容器 -->
     <div id="map" class="map-x"></div>
 
     <div class="explain">
@@ -44,6 +44,7 @@ export default {
 
         view: new View({ // 地图视图
           projection: "EPSG:4326", // 坐标系，有EPSG:4326和EPSG:3857
+          // projection: "EPSG:3857", // 坐标系，有EPSG:4326和EPSG:3857
           center: [114.064839, 22.548857], // 默认显示的中心点
           minZoom:10, // 地图缩放最小级别
           maxZoom:14, // 地图缩放最大级别
