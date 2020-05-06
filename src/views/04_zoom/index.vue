@@ -1,6 +1,7 @@
 <template>
   <div class="vm">
     <h2 class="h-title">缩放</h2>
+
     <div id="map" class="map-x"></div>
 
     <div class="zoom">
@@ -49,24 +50,26 @@ export default {
     initMap () {
       this.map = new Map({
         target: "map",
+
         layers: [
           new Tile({
             source: new OSM()
           })
         ],
+        
         view: new View({
           projection: "EPSG:4326",
           center: [116.404177,39.909652],
-          zoom: this.zoom,
-          minZoom: this.minZoom,
-          maxZoom: this.maxZoom
+          zoom: this.zoom,        //打开页面默认的缩放级别
+          minZoom: this.minZoom,  //地图缩放最小级别
+          maxZoom: this.maxZoom   //地图缩放最大级别
         })
       })
     },
     zoomIn () {
-      let view = this.map.getView()
-      let zoom = view.getZoom()
-      view.setZoom(zoom + 1)
+      let view = this.map.getView()     //gitView()获取地图的View视图属性
+      let zoom = view.getZoom()         //获取当前的缩放等级
+      view.setZoom(zoom + 1)            //对地图的VIew对象中的属性进行修改,使其Zoom缩放等级增大
     },
     zoomOut () {
       let view = this.map.getView()
@@ -92,11 +95,12 @@ export default {
     }
     button {
       margin: 0 5px;
-      /* background: $abgColor; */
+      background: #999;
       border: none;
       color: #fff;
       padding: 4px 12px;
       border-radius: 4px;
       outline: none;
+      cursor: pointer;
     }
 </style>
