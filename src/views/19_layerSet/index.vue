@@ -26,6 +26,8 @@ export default {
           new Tile({
             source: new OSM()
           }),
+
+          //这个图层是彩色的那个图层 
           new Tile({
             source: new TileJSON({
               url: 'https://api.tiles.mapbox.com/v4/mapbox.20110804-hoa-foodinsecurity-3month.json?securee&access_token=pk.eyJ1IjoiYWhvY2V2YXIiLCJhIjoiY2pzbmg0Nmk5MGF5NzQzbzRnbDNoeHJrbiJ9.7_-_gL8ur7ZtEiNwRfCy7Q',

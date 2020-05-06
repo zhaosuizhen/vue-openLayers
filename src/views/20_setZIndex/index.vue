@@ -14,6 +14,10 @@
       <input type="number" v-model="starZIndex" />
       星形所在图层的 Z-index
     </label>
+
+    <div class="explain">
+      <br/><p>简而言之，就是可以利用方法setVisible和setZIndex来控制图层，满足80%的这种需求</p>
+    </div>
   </div>
 </template>
 
@@ -125,5 +129,6 @@ export default {
   label {
     display: block;
     margin: 10px;
+    margin-left: 300px;
   }
 </style>
