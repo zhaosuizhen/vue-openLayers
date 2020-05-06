@@ -8,7 +8,7 @@
                 text-color="#fff"
                 active-text-color="#ffd04b"
                 router>
-                <el-menu-item v-for="(item,index) in navList" :key="index" :index="item.router">
+                <el-menu-item v-for="(item,index) in navList" :key="index" :index="item.router" :class="{activeNow:$route.path == item.router}">
                     <span slot="title">{{item.title}}</span>
                 </el-menu-item>
             </el-menu>
@@ -26,7 +26,7 @@ export default {
             navList:[
                 {
                     title: '第一个地图 firstMap',
-                    router: '/'
+                    router: '/firstMap'
                 },
                 {
                     title: '弹窗 popup',
@@ -143,5 +143,9 @@ export default {
 .content{
     max-height: 100vh;
     overflow-y:auto;
+}
+.activeNow{
+    background-color: rgb(2, 66, 131) !important;
+    color:#ffd04b !important;
 }
 </style>

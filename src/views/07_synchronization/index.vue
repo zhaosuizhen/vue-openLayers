@@ -2,12 +2,18 @@
   <div class="vm">
     <h2 class="h-title">同步两个地图</h2>
     <div class="map-bx">
+
+      <!-- 第一个地图容器 -->
       <div id="OSM" class="map-x"></div>
+
+      <!-- 第二个地图容器 -->
       <div id="BingMaps" class="map-x"></div>
+
     </div>
 
     <div class="explain">
-      <p>两个地图使用同一个view，所以在移动、缩放、旋转等操作都是同步的。</p>
+      <p>这两个地图拥有同一个view视图层,所以操作其中一个的同时,另一个也会跟着变化</p>
+      <p>所以在移动、缩放、旋转等操作都是同步的。</p>
       <p>按住shift，鼠标在地图上选区，可以放大选区。</p>
       <p>按住alt+shift，鼠标可以在地图上拖拽，进行旋转。</p>
     </div>
