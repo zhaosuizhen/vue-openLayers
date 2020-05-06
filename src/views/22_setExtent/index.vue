@@ -63,6 +63,15 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+  button {
+      margin: 0 10px;
+      margin-bottom: 30px;
+      background: #666;
+      border: none;
+      color: #fff;
+      padding: 4px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+  }
 </style>
