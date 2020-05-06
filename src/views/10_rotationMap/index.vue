@@ -3,8 +3,12 @@
     <h2 class="h-title">旋转 rotation</h2>
     <div id="map" class="map-x"></div>
     <div class="btn-x">
-      <button @click="rotateLeft">↻</button>
-      <button @click="rotateRight">↺</button>
+      <button @click="rotateLeft">顺时针 ↻</button>
+      <button @click="rotateRight">逆时针 ↺</button>
+    </div>
+    <div class="explain">
+      <p>使用map.getView().getRotation()获取当前视图的旋转配置</p>
+      <p>使用map.getView().setRotation()设置视图的旋转配置</p>
     </div>
   </div>
 </template>
@@ -40,8 +44,8 @@ export default {
       })
     },
     rotateLeft () {
-      let currentRotation = this.map.getView().getRotation()
-      this.map.getView().setRotation(currentRotation + 1)
+      let currentRotation = this.map.getView().getRotation()    //获取当前视图的旋转配置
+      this.map.getView().setRotation(currentRotation + 1)       //设置视图的旋转配置
     },
     rotateRight () {
       let currentRotation = this.map.getView().getRotation()
@@ -61,5 +65,11 @@ export default {
   }
   button {
       margin: 0 10px;
+      margin-bottom: 30px;
+      background: #666;
+      border: none;
+      color: #fff;
+      padding: 4px 12px;
+      border-radius: 4px;
   }
 </style>

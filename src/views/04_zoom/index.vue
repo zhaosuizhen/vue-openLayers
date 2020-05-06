@@ -95,7 +95,7 @@ export default {
     }
     button {
       margin: 0 5px;
-      background: #999;
+      background: #666;
       border: none;
       color: #fff;
       padding: 4px 12px;

@@ -12,6 +12,10 @@
       <button @click="rotateAroundRome">绕着罗马旋转</button>
       <button @click="flyToBern">飞行到伯尔尼</button>
     </div>
+
+    <div class="explain">
+      <p>使用场景非常局限,如需使用请参考官方文档或者当前demo</p>
+    </div>
   </div>
 </template>
 
@@ -50,7 +54,7 @@ export default {
         view: new View({
           projection: "EPSG:4326", // 坐标系，有EPSG:4326和EPSG:3857
           center: this.London, // 伦敦
-          zoom: 6 // 地图缩放级别（打开页面时默认级别）
+          zoom: 8 // 地图缩放级别（打开页面时默认级别）
         })
       })
     },
@@ -181,5 +185,11 @@ export default {
   }
   button {
       margin: 0 10px;
+      margin-bottom: 30px;
+      background: #666;
+      border: none;
+      color: #fff;
+      padding: 4px 12px;
+      border-radius: 4px;
   }
 </style>
