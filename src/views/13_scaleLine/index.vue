@@ -16,7 +16,8 @@
       <p>ol.control.ScaleLine: 比例尺控件</p>
       <p>ol.control.Zoom: 缩放按钮控件</p>
       <p>ol.control.ZoomSlider: 缩放滚动条控件</p>
-      <p>ol.control.ZoomToExtent: 放大到设定区域控件</p>
+      <p>ol.control.ZoomToExtent: 放大到设定区域控件</p><br/>
+      <img src="../../assets/images/demo.png" width="900" alt="">
     </div>
   </div>
 </template>
