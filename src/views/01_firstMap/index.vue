@@ -1,7 +1,10 @@
 <template>
   <div class="vm">
     <h2 class="h-title">第一个地图</h2>
+
+<!-- 地图容器 -->
     <div id="map" class="map-x"></div>
+
     <div class="explain">
       <p>Map：地图容器，核心部分，可加载各类地图与功能控件，用于渲染、表现动态地图。</p>
       <p>target：目标元素</p>
@@ -27,18 +30,24 @@ export default {
   methods: {
     initMap () {
       // 地图实例
+      // 三个必须的属性：target：对应地图容器的ID属性
+      //                layers：设置地图图层，可对照ps图层理解，可以有多个层级
+      //                view：设置显示地图的视图
       this.map = new Map({
         target: "map", // 对应页面里 id 为 map 的元素
+
         layers: [ // 图层
           new Tile({
             source: new OSM() // 图层数据源
           })
         ],
+
         view: new View({ // 地图视图
           projection: "EPSG:4326", // 坐标系，有EPSG:4326和EPSG:3857
-          center: [114.064839, 22.548857], // 深圳坐标
+          center: [114.064839, 22.548857], // 默认显示的中心点
           minZoom:10, // 地图缩放最小级别
-          zoom: 12 // 地图缩放级别（打开页面时默认级别）
+          maxZoom:14, // 地图缩放最大级别
+          zoom: 12 // 打开时默认的地图缩放级别（打开页面时默认级别）
         })
       })
     }
