@@ -1,14 +1,29 @@
 <template>
   <div class="vm">
     <h2 class="h-title">标记 marker</h2>
+
+    <!-- 地图容器 -->
     <div id="map" class="map-x"></div>
+
     <a
       class="vienna"
       target="_blank"
       ref="viennaTxt"
 			href="https://baike.baidu.com/item/%E7%BB%B4%E4%B9%9F%E7%BA%B3/6412?fr=aladdin"
     >维也纳</a>
+
+    <!-- 标注坐标点 -->
     <div class="marker" title="Marker" ref="marker"></div>
+
+    <div class="explain">
+      <p>
+        除此之外,还可以使用Feature + Style来实现.在效果上来看,两种方式所展示的效果是一样的.但是在代码上,Feature + Style
+        不需要使用HTML中的标签元素
+      </p>
+      <p>
+        其细节可见下方地图demo"简单的标记simplenessLabel"
+      </p>
+    </div>
   </div>
 </template>
 
