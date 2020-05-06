@@ -7,8 +7,10 @@
     </div>
 
     <div class="explain">
-      <p>预加载：preload: Infinity</p>
-      <p>默认值：preload: 0</p>
+      <p>这两个地图也使用同一个View试图层</p>
+      <p>在layers中配置预加载：preload: Infinity</p>
+      <p>在layers中配置默认值：preload: 0</p><br/>
+      <p>通过调控网速,未发现区别,暂时我也没明白预加载有什么用</p>
     </div>
   </div>
 </template>
@@ -37,29 +39,37 @@ export default {
       // 初始化 map1
       this.map1 = new Map({
         target: 'map1',
+
         layers: [
           new Tile({
+
             prreload: Infinity, // 预加载
+
             source: new BingMaps({
               key: 'AiZrfxUNMRpOOlCpcMkBPxMUSKOEzqGeJTcVKUrXBsUdQDXutUBFN3-GnMNSlso-',
               imagerySet: 'Aerial'
             })
           })
         ],
+
         view: this.mapView
       })
 
       this.map2 = new Map({
         target: 'map2',
+
         layers: [
           new Tile({
+            
             prreload: 0, // 默认值
+
             source: new BingMaps({
               key: 'AiZrfxUNMRpOOlCpcMkBPxMUSKOEzqGeJTcVKUrXBsUdQDXutUBFN3-GnMNSlso-',
               imagerySet: 'Aerial'
             })
           })
         ],
+
         view: this.mapView
       })
     }
