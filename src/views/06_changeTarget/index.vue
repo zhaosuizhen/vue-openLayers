@@ -47,8 +47,8 @@ export default {
       })
     },
     changeMap () {
-      let target = this.map.getTarget() === 'map1' ? 'map2' : 'map1'
-      this.map.setTarget(target)    //使用地图容器.setTarget()可以设置地图的target属性
+      let target = this.map.getTarget() === 'map1' ? 'map2' : 'map1'    //使用地图容器.getTarget()可以获取当前的target属性
+      this.map.setTarget(target)                                        //使用地图容器.setTarget()可以设置地图的target属性
     }
   },
   mounted () {
