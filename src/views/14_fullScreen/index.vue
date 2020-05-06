@@ -23,6 +23,8 @@ export default {
     initMap () {
       this.map = new Map({
         target: 'map',
+
+        // 控件配置
         controls: control.defaults().extend([
           new control.FullScreen()
         ]),

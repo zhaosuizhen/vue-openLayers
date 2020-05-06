@@ -2,9 +2,22 @@
   <div class="vm">
     <h2 class="h-title">比例尺控件 ScaleLine</h2>
     <div id="map" class="map-x"></div>
-    <select id="units" v-model="scaleplate">
+    <select id="units" v-model="scaleplate" class="select">
       <option v-for="item in scaleplateList" :key="item.v">{{item.t}}</option>
     </select>
+
+    <div class="explain">
+      <p>默认情况下，在地图上是不会显示这么多地图控件的，可以应用ol.control.defaults进行控件的配置</p><br/>
+      <p>ol.control.Attribution: 右下角的地图信息控件</p>
+      <p>ol.control.FullScreen: 全屏控件</p>
+      <p>ol.control.MousePosition: 鼠标位置控件</p>
+      <p>ol.control.OverviewMap: 鸟瞰图控件</p>
+      <p>ol.control.Rotate: 指北针控件</p>
+      <p>ol.control.ScaleLine: 比例尺控件</p>
+      <p>ol.control.Zoom: 缩放按钮控件</p>
+      <p>ol.control.ZoomSlider: 缩放滚动条控件</p>
+      <p>ol.control.ZoomToExtent: 放大到设定区域控件</p>
+    </div>
   </div>
 </template>
 
@@ -56,7 +69,8 @@ export default {
     initMap () {
       this.map = new Map({
         target: 'map',
-        // 添加控件
+
+        // 控件配置
         controls: control.defaults().extend([
           this.scaleLineControl // 比例尺
         ]),
@@ -91,6 +105,9 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+.select{
+  margin-left: 330px;
+  margin-bottom: 30px;
+}
 </style>
