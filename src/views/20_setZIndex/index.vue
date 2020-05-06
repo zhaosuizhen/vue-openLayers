@@ -16,7 +16,7 @@
     </label>
 
     <div class="explain">
-      <br/><p>简而言之，就是可以利用方法setVisible和setZIndex来控制图层，满足80%的这种需求</p>
+      <br/><p>简而言之，就是可以利用方法 <b>setVisible (显示/隐藏图层) 和 setZIndex (设置图层层级)</b> 来控制图层，满足80%的这种需求</p>
     </div>
   </div>
 </template>
