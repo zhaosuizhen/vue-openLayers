@@ -4,7 +4,8 @@
     <div id="map" class="map-x"></div>
 
     <div class="explain">
-      
+      <p>需要使用JSON格式的地图层</p>
+      <p>坐标系EPSG:4326和EPSG:3857在何时使用暂时不明确</p>
     </div>
   </div>
 </template>
@@ -15,6 +16,7 @@ import CN from '@/assets/data/MapOfChina.json'
 import { Map, View } from 'ol'
 import SourceVector from 'ol/source/Vector'
 import LayerVector from 'ol/layer/Vector'
+// 引入JSON地图层
 import GeoJSON from 'ol/format/GeoJSON'
 
 export default {
@@ -23,6 +25,7 @@ export default {
     return {
       map: null,
       source: new SourceVector({
+        // 使用引入的JSON地图层
         features: new GeoJSON().readFeatures(CN, {
           dataProjection: 'EPSG:4326',
           featureProjection: "EPSG:4326"
@@ -54,6 +57,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+.map-x{
+  border: 3px solid #222;
+}
 </style>
