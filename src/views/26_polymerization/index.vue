@@ -81,7 +81,6 @@ export default {
       let raster = new Tile({
         source: new OSM()
       })
-
       this.map = new Map({
         target: "map",
         layers: [raster, clusters],

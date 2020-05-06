@@ -62,9 +62,12 @@ export default {
       // 实例化地图
       this.map = new Map({
         target: 'map', // 地图容器id
+
         layers: [
           new Tile({
-            source: new OSM()
+            source: new OSM({
+              wrapX:false
+            })
           })
         ],
         overlays: [marker, vienna],

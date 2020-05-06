@@ -38,7 +38,9 @@ export default {
 
         layers: [ // 图层
           new Tile({
-            source: new OSM() // 图层数据源
+            source: new OSM({
+              wrapX:false
+            }) // 图层数据源
           })
         ],
 
