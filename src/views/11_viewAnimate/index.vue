@@ -14,7 +14,7 @@
     </div>
 
     <div class="explain">
-      <p>使用场景非常局限,如需使用请参考官方文档或者当前demo</p>
+      <p>个人感觉动画使用场景非常局限,如需使用请参考官方文档或者当前demo</p>
     </div>
   </div>
 </template>

@@ -40,6 +40,7 @@ export default {
         })
       })
 
+      // 网格配置
       let graticule = new Graticule({
         showLabels: true
       })
