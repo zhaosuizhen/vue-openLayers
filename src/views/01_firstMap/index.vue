@@ -39,7 +39,7 @@ export default {
         layers: [ // 图层
           new Tile({
             source: new OSM({
-              wrapX:false
+              wrapX:false   //这个设置可以使地图只有一个
             }) // 图层数据源
           })
         ],

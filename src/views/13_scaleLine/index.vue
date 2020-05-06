@@ -17,6 +17,7 @@
       <p>ol.control.Zoom: 缩放按钮控件</p>
       <p>ol.control.ZoomSlider: 缩放滚动条控件</p>
       <p>ol.control.ZoomToExtent: 放大到设定区域控件</p><br/>
+      <p>controls: [],      //这样设置可以使全部控件不进行显示</p><br/>
       <img src="../../assets/images/demo.png" width="900" alt="">
     </div>
   </div>
@@ -73,8 +74,11 @@ export default {
 
         // 控件配置
         controls: control.defaults().extend([
-          this.scaleLineControl // 比例尺
+          this.scaleLineControl, // 比例尺
         ]),
+
+        // controls: [],      //这样设置可以使全部控件不进行显示
+
         layers: [
           new Tile({
             source: new BingMaps({
