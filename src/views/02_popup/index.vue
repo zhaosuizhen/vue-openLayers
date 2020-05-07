@@ -16,7 +16,10 @@
       <span class="icon-close" @click="closePopup">✖</span>
 
     <!-- 显示内容 -->
-      <div class="content">{{currentCoordinate}}</div>
+      <div class="content">
+        <p>经纬度坐标：{{currentCoordinate}}</p>
+        <p>不知道叫啥：{{address}}</p>
+      </div>
     </div>
     <div class="explain">
       <p>
@@ -44,6 +47,7 @@ export default {
     return {
       map: null,
       currentCoordinate: null,  //控制弹窗是否显示\弹框中显示的内容
+      address:null,
       overlay: null
     }
   },
@@ -80,6 +84,7 @@ export default {
     mapClick () {
       this.map.on('singleclick', evt => {
         const coordinate = evt.coordinate               //这个获取到的是像'center'中心点一样的坐标点
+        this.address = coordinate
         // console.log(coordinate)                      //[-27123159.680715512, 4851265.798797086]
         const hdms = toStringHDMS(toLonLat(coordinate)) //这个获取到的是经纬度
         // console.log(hdms)                            //39° 53′ 57″ N 116° 20′ 55″ E

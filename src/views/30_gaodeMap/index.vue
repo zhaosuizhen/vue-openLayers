@@ -39,16 +39,16 @@ export default {
             source: new XYZ({
                 url:'http://webrd03.is.autonavi.com/appmaptile?x={x}&y={y}&z={z}&lang=zh_cn&size=1&scale=1&style=8',//高德地图在线
                 wrapX:false,
-                projection: 'EPSG:3857'
+                // projection: 'EPSG:3857'
             })
           })
         ],
 
         view: new View({ // 地图视图
-        //   projection: "EPSG:4326", // 坐标系，有EPSG:4326和EPSG:3857
+          projection: "EPSG:4326", // 坐标系，有EPSG:4326和EPSG:3857
           // projection: "EPSG:3857", // 坐标系，有EPSG:4326和EPSG:3857
           center: [114.064839, 22.548857], // 默认显示的中心点
-          zoom: 3 // 打开时默认的地图缩放级别（打开页面时默认级别）
+          zoom: 8 // 打开时默认的地图缩放级别（打开页面时默认级别）
         })
       })
     }
