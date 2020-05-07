@@ -151,6 +151,22 @@ export default {
                 {
                     title: '聚合数据 polymerization',
                     router: '/polymerization'
+                },
+                {
+                    title: '谷歌卫星地图',
+                    router: '/googleMap_1'
+                },
+                {
+                    title: '谷歌地形地图',
+                    router: '/googleMap_2'
+                },
+                {
+                    title: '谷歌交通地图',
+                    router: '/googleMap_3'
+                },
+                {
+                    title: '高德在线地图',
+                    router: '/gaodeMap'
                 }
             ]
         }

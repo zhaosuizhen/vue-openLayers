@@ -33,7 +33,7 @@ export default {
       let styleCache = {}
 
       for (let i = 0; i < count; ++i) {
-        let coordinates = [2 * e * Math.random() - e, 2* e * Math.random() - e]
+        let coordinates = [2 * e * Math.random() - e, 2 * e * Math.random() - e]
         features[i] = new Feature(new Point(coordinates))
       }
 

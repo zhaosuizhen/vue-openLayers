@@ -139,6 +139,26 @@ Vue.use(VueRouter)
           path: 'polymerization',
           name: 'polymerization',
           component: () => import('@/views/26_polymerization')
+        },
+        {
+          path: 'googleMap_1',
+          name: 'googleMap_1',
+          component: () => import('@/views/27_googleMap_1')
+        },
+        {
+          path: 'googleMap_2',
+          name: 'googleMap_2',
+          component: () => import('@/views/28_googleMap_2')
+        },
+        {
+          path: 'googleMap_3',
+          name: 'googleMap_3',
+          component: () => import('@/views/29_googleMap_3')
+        },
+        {
+          path: 'gaodeMap',
+          name: 'gaodeMap',
+          component: () => import('@/views/30_gaodeMap')
         }
       ]
     }
