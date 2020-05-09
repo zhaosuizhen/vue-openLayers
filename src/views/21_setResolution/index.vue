@@ -5,7 +5,6 @@
     <div class="explain">
       <p>在限制的范围之内时显示图层，在限制的范围之外时不显示图层</p>
       <p>使用<b>minResolution</b>与<b>maxResolution</b>可以设置最小/最大分辨率限制</p>
-      <p>不明白使用场景,设置最小分辨率不生效</p>
     </div>
   </div>
 </template>
@@ -31,12 +30,13 @@ export default {
           new Tile({
             source: new OSM()
           }),
+          // 被设置分辨率的图层，不在分辨率范围内不会显示图层
           new Tile({
             source: new TileJSON({
               url: 'https://api.tiles.mapbox.com/v4/mapbox.natural-earth-hypso-bathy.json?secure&access_token=pk.eyJ1IjoiYWhvY2V2YXIiLCJhIjoiY2pzbmg0Nmk5MGF5NzQzbzRnbDNoeHJrbiJ9.7_-_gL8ur7ZtEiNwRfCy7Q',
               crossOrigin: 'anonymous'
             }),
-            minResolution: 2000,    //设置最小分辨率
+            minResolution: 5000,    //设置最小分辨率
             maxResolution: 20000    //设置最大分辨率
           })
         ],

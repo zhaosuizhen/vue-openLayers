@@ -2,7 +2,9 @@
   <div class="vm">
     <h2 class="h-title">简单的标记</h2>
     <div ref="popup" class="popup" v-show="shopPopup"></div>
+
     <div id="map" class="map-x"></div>
+    
     <div class="explain">
       <p>可与上面"标记"的demo做对比,效果一样,代码实现不同</p>
       <p>可以用Overlay实现，像弹窗那个demo里那样。</p>
@@ -41,10 +43,10 @@ export default {
     initMap () {
       // 创建图标特性
       let iconFeature = new Feature({
-        geometry: new Point([0, 0]), // 图标展示的位置
+        geometry: new Point([114.064839, 22.548857]), // 图标展示的位置
         name: '你点我了',
-        population: 4000,
-        rainfall: 500
+        population: 4000, //人口
+        rainfall: 500     //降雨量
       })
 
       // 创建图标样式
@@ -68,7 +70,7 @@ export default {
         features: [iconFeature]
       })
 
-      // 创建矢量图层
+      // 创建矢量图层，将矢量容器添加进图层中
       let vectorLayer = new layerVecor({
         source: vectorSource
       })
@@ -85,7 +87,8 @@ export default {
         target: 'map',
         layers: [rasterLayer, vectorLayer],
         view: new View({
-          center: [0, 0],
+          projection: "EPSG:4326", 
+          center: [114.064839, 22.548857],
           zoom: 3
         })
       })

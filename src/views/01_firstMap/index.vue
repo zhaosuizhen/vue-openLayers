@@ -36,7 +36,7 @@ export default {
       this.map = new Map({
         target: "map", // 对应页面里 id 为 map 的元素
 
-        layers: [ // 图层
+        layers: [ // 图层，每一个title对应一个地图层，参考ps中的图层概念
           new Tile({
             source: new OSM({
               wrapX:false   //这个设置可以使地图只有一个

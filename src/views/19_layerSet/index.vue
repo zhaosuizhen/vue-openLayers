@@ -23,6 +23,7 @@ export default {
       this.map = new Map({
         target: 'map',
         layers: [
+          // 多个地图层，一个OSM层，两个JSON层，参考ps中的图层
           new Tile({
             source: new OSM()
           }),
