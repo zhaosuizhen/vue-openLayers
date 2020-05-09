@@ -30,7 +30,6 @@
                 class="el-menu-vertical-demo"
                 background-color="#545c64"
                 text-color="#fff"
-                active-text-color="#ffd04b"
                 router>
                 <el-menu-item v-for="(item,index) in navList" :key="index" :index="item.router" :class="{activeNow:$route.path == item.router}">
                     <span slot="title">{{item.title}}</span>

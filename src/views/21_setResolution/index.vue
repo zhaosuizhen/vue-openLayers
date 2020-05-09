@@ -3,6 +3,7 @@
     <h2 class="h-title">限制图层的最大/最小分辨率 minResolution / maxResolution</h2>
     <div id="map" class="map-x"></div>
     <div class="explain">
+      <p>改变分辨率时，会发现其中一个图层的显示与隐藏</p>
       <p>在限制的范围之内时显示图层，在限制的范围之外时不显示图层</p>
       <p>使用<b>minResolution</b>与<b>maxResolution</b>可以设置最小/最大分辨率限制</p>
     </div>
